@@ -14,7 +14,7 @@ class Solution {
             int x = coordinates[i][0];
             int y = coordinates[i][1];
 
-            // Cross multiplication to compare slopes uejwfuhf
+            // Cross multiplication to compare slopes 
             if ((y - y1) * dx != (x - x1) * dy) {
                 return false;
             }
