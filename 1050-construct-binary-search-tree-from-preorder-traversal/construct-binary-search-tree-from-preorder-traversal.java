@@ -1,0 +1,23 @@
+class Solution {
+
+    private int index = 0;
+
+    public TreeNode bstFromPreorder(int[] preorder) {
+        return build(preorder, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private TreeNode build(int[] preorder, int lower, int upper) {
+        if (index >= preorder.length) return null;
+
+        int val = preorder[index];
+        if (val < lower || val > upper) return null;
+
+        index++;
+        TreeNode root = new TreeNode(val);
+
+        root.left = build(preorder, lower, val);
+        root.right = build(preorder, val, upper);
+
+        return root;
+    }
+}
